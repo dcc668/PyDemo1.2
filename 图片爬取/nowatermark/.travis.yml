@@ -1,0 +1,19 @@
+sudo: false
+
+language: python
+
+python:
+  - 3.6
+#  - nightly
+
+install:
+  - pip install codecov
+  - pip install opencv-python
+
+script:
+  - coverage run tests/test_*
+
+after_success:
+  - codecov
+
+
